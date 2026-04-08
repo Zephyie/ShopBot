@@ -58,10 +58,10 @@ async function registerEvents(client: Client<boolean>) {
 }
 
 export async function startClient() {
-    if (!config.token) {
-        PrettyLog.error("Missing token in config.json")
-        process.exit(1)
-    }
+  if (!process.env.token) {
+    PrettyLog.error("Missing token in environment variables")
+    process.exit(1)
+}
 
     await registerCommands(client)
     await registerEvents(client)

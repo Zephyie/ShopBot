@@ -66,7 +66,7 @@ export async function startClient() {
     await registerCommands(client)
     await registerEvents(client)
 
-    await client.login(config.token)
+    await client.login(process.env.token)
 }
 
 EVENTS.on('settingUpdated', async (settingId, _) => {

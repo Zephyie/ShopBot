@@ -6,7 +6,7 @@
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && npx tsc-alias",
+    "build": "npx tsc && npx tsc-alias",
     "clean:dist": "(rd /s /q dist || rm -rf dist) && mkdir dist",
     "build:clean": "npm run clean:dist --silent && npm run build",
     "build:prod": "npm run clean:dist --silent && tsc -p tsconfig.build.json && npx tsc-alias",
@@ -24,7 +24,6 @@
   "devDependencies": {
     "@types/luxon": "^3.4.2",
     "@types/node": "^25.0.3",
-    "tsc-alias": "^1.8.16"
   },
   "dependencies": {
     "typescript": "^5.0.0",
